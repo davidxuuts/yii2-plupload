@@ -1,6 +1,6 @@
 <?php
 
-namespace emhome\plupload;
+namespace davidxu\plupload;
 
 use Yii;
 use yii\web\AssetBundle;
@@ -8,11 +8,8 @@ use yii\web\AssetBundle;
 /**
  * PluploadAsset
  *
- * @package plupload\assets
- * @link http://www.tintsoft.com/
- * @copyright Copyright (c) 2012 TintSoft Technology Co. Ltd.
- * @license http://www.tintsoft.com/license/
- * @author emhome <emhome@163.com>
+ * @package davidxu\plupload
+ * @author David Xu <david.xu.uts@163.com>
  * @since 2.0
  */
 class PluploadAsset extends AssetBundle {
@@ -20,7 +17,7 @@ class PluploadAsset extends AssetBundle {
     public $publishOptions = [
         'forceCopy' => YII_DEBUG
     ];
-    public $sourcePath = '@emhome/plupload/assets';
+    public $sourcePath = '@davidxu/plupload/assets';
 
     /**
      * @var array 包含的JS
@@ -64,5 +61,4 @@ class PluploadAsset extends AssetBundle {
         $this->js[] = "js/i18n/$language.js";
         parent::init();
     }
-
 }

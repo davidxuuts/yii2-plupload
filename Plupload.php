@@ -1,6 +1,6 @@
 <?php
 
-namespace emhome\plupload;
+namespace davidxu\plupload;
 
 use Yii;
 use yii\base\Exception;
@@ -14,7 +14,7 @@ use yii\widgets\InputWidget;
 /**
  * Plupload
  *
- * @author emhome <emhome@163.com>
+ * @author David Xu <david.xu.uts@163.com>
  * @since 2.0
  */
 class Plupload extends InputWidget {
@@ -305,8 +305,8 @@ class Plupload extends InputWidget {
         if (isset($this->htmlOptions['style'])) {
             return;
         }
-        $width = 480;
-        $height = 300;
+        $width = 150;
+        $height = 100;
         if (isset($this->options['resize']) && !empty($resize = $this->options['resize'])) {
             $width = !isset($resize['width']) ?: $resize['width'];
             $height = !isset($resize['height']) ?: $resize['height'];

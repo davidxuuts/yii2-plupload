@@ -1,16 +1,17 @@
 <?php
 
-namespace emhome\plupload;
+namespace davidxu\plupload;
 
 use Yii;
+use yii\base\BaseObject;
 
 /**
  * PluploadEvents
  *
- * @author emhome <emhome@163.com>
+ * @author David Xu <david.xu.uts@163.com>
  * @since 2.0
  */
-class PluploadEvents extends \yii\base\Object {
+class PluploadEvents extends BaseObject {
 
     const JQUERY = 'jQuery';
 

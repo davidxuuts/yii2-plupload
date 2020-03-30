@@ -1,9 +1,10 @@
 <?php
 
-namespace emhome\plupload;
+namespace davidxu\plupload;
 
 use Yii;
 use yii\base\Action;
+use yii\base\InvalidConfigException;
 use yii\web\Response;
 use yii\web\UploadedFile;
 use yii\helpers\FileHelper;
@@ -12,10 +13,8 @@ use yii\web\HttpException;
 /**
  * PluploadAction
  *
- * @link http://www.tintsoft.com/
- * @copyright Copyright (c) 2012 TintSoft Technology Co. Ltd.
- * @license http://www.tintsoft.com/license/
- * @author emhome <emhome@163.com>
+ * @copyright Copyright (c) 2020 David Xu.
+ * @author David Xu <david.xu.uts@163.com>
  * @since 2.0
  */
 class PluploadAction extends Action {
@@ -62,11 +61,12 @@ class PluploadAction extends Action {
             FileHelper::createDirectory($this->tempPath, $this->dirMode, true);
         }
     }
-
+    
     /**
      * Runs the action.
      * This method displays the view requested by the user.
      * @throws HttpException if the view is invalid
+     * @throws InvalidConfigException
      */
     public function run() {
         $uploadedFile = UploadedFile::getInstanceByName($this->inputName);

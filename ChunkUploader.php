@@ -1,12 +1,6 @@
 <?php
 
-/**
- * @link http://www.tintsoft.com/
- * @copyright Copyright (c) 2012 TintSoft Technology Co. Ltd.
- * @license http://www.tintsoft.com/license/
- */
-
-namespace emhome\plupload;
+namespace davidxu\plupload;
 
 use Yii;
 use yii\base\Exception;
@@ -14,15 +8,16 @@ use yii\web\UploadedFile;
 
 /**
  * 分片上传类
- * @package xutl\plupload
+ * @package davidxu\plupload
  */
 class ChunkUploader {
-
+    
     /**
      * Processes a chunked file upload.
      * @param UploadedFile $uploadedFile
      * @param string $path path to write chunks to
      * @returns boolean true if file upload is complete, or false if there are more chunks
+     * @return bool
      * @throws Exception
      */
     public static function process($uploadedFile, $path) {
@@ -48,12 +43,11 @@ class ChunkUploader {
         fclose($out);
         unlink($uploadedFile->tempName);
         // Check if all chunks have been processed
-        if (!$totalChunks || $chunk == $totalChunks - 1) {
+        if (!$totalChunks || $chunk === $totalChunks - 1) {
             // Strip the temp .part suffix off
             rename("$path.part", $path);
             return true;
         }
         return false;
     }
-
 }

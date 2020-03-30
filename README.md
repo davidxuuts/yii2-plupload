@@ -2,9 +2,9 @@
 
 yii2-plupload is a widget based plupload solution for Yii2. It is released under the BSD 3-Clause license.
 
-[![Latest Stable Version](https://poser.pugx.org/emnabs/yii2-plupload/v/stable.png)](https://packagist.org/packages/emnabs/yii2-plupload)
-[![Total Downloads](https://poser.pugx.org/emnabs/yii2-plupload/downloads.png)](https://packagist.org/packages/emnabs/yii2-plupload)
-[![License](https://poser.pugx.org/emnabs/yii2-plupload/license.png)](https://packagist.org/packages/emnabs/yii2-plupload)
+[![Latest Stable Version](https://poser.pugx.org/davidxu/yii2-plupload/v/stable.png)](https://packagist.org/packages/davidxu/yii2-plupload)
+[![Total Downloads](https://poser.pugx.org/davidxu/yii2-plupload/downloads.png)](https://packagist.org/packages/davidxu/yii2-plupload)
+[![License](https://poser.pugx.org/davidxu/yii2-plupload/license.png)](https://packagist.org/packages/davidxu/yii2-plupload)
 
 
 ## Installation
@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist emnabs/yii2-plupload "*"
+php composer.phar require --prefer-dist davidxu/yii2-plupload "*"
 ```
 
 or add
 
 ```json
-"emnabs/yii2-plupload": "*"
+davidxu/yii2-plupload *
 ```
 
 to the require section of your composer.json.
@@ -32,7 +32,7 @@ To use this widget, you have to add the code in your viewer page:
 Usage With ActiveForm and model
 
 ```
-use emhome\plupload\Plupload;
+use davidxu\plupload\Plupload;
 
 echo $form->field($model, 'thumb')->widget(Plupload::classname(), [
     'url' => ['upload'],
@@ -55,7 +55,7 @@ echo $form->field($model, 'thumb')->widget(Plupload::classname(), [
 Usage Without ActiveForm model
 
 ```
-use emhome\plupload\Plupload;
+use davidxu\plupload\Plupload;
 
 Plupload::widget([
     'url' => ['upload'],
@@ -85,16 +85,16 @@ public function actions()
     return [
 	...
         'plupload' => [
-	    'class' => 'emhome\plupload\PluploadAction',
+	    'class' => 'davidxu\plupload\PluploadAction',
 	    'onComplete' => function($file, $params) {
-	        //上传完成后操作
-		...
+	        //On Complete
+		    ...
 	        return [
 	            'file' => $file,
 	            'params' => $params
 	        ];
 	    },
-	],
+	    ],
 	...
     ];
 }
@@ -103,10 +103,10 @@ public function actions()
 
 ## License
 
-**yii2-plupload** is released under the `BSD 3-Clause` License. See the bundled `LICENSE.md` for details.
+**yii2-plupload** is released under the `Apache 2.0` License. See the bundled `LICENSE.md` for details.
 
 
 ## Plupload
 
-Copyright 2016, [Ephox](http://www.ephox.com/)  
+Copyright 2002, [David XU](https://davidxuuts.github.com/)  
 Released under [GPLv2 License](https://github.com/moxiecode/plupload/blob/master/license.txt)
