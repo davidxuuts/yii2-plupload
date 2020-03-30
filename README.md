@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist davidxu/yii2-plupload "*"
+php composer.phar require --prefer-dist davidxuuts/yii2-plupload "*"
 ```
 
 or add
 
 ```json
-davidxu/yii2-plupload *
+davidxuuts/yii2-plupload *
 ```
 
 to the require section of your composer.json.
